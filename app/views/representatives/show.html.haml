@@ -1,0 +1,59 @@
+.row.mt-2
+    .col-12.col-md-6.offset-md-3.col-xl-4.offset-xl-4
+        %h3.text-center= @representative.name
+        .card-body
+            .card-text
+                %dl.row
+                    %dt.col-sm-3.text-md-right OCD ID:
+                    %dt.col-sm-9
+                        = @representative.ocdid
+                %dl.row
+                    %dt.col-sm-3.text-md-right Title:
+                    %dt.col-sm-9
+                        = @representative.title
+                %dl.row
+                    %dt.col-sm-3.text-md-right Street:
+                    %dt.col-sm-9
+                        = @representative.street
+                %dl.row
+                    %dt.col-sm-3.text-md-right City:
+                    %dt.col-sm-9
+                        = @representative.city
+                %dl.row
+                    %dt.col-sm-3.text-md-right State:
+                    %dt.col-sm-9
+                        = @representative.state
+                %dl.row
+                    %dt.col-sm-3.text-md-right Zipcode:
+                    %dt.col-sm-9
+                        = @representative.zip
+                %dl.row
+                    %dt.col-sm-3.text-md-right Political Party:
+                    %dt.col-sm-9
+                        = @representative.political_party
+                %dl.row
+                    %dt.col-sm-3.text-md-right Photo:
+                    %dt.col-sm-9
+                        %a{ href: @representative.photo }
+                            = @representative.photo
+                %dl.row
+                    %dt.col-sm-3.text-md-right Time Added:
+                    %dt.col-sm-9
+                        %time.timeago{ datetime: @representative.created_at.iso8601 }
+                %dl.row
+                    %dt.col-sm-3.text-md-right Last Updated:
+                    %dt.col-sm-9
+                        %time.timeago{ datetime: @representative.updated_at.iso8601 }
+-# commented. might need to add later
+    .col-12.col-md-6.offset-md-3.col-xl-4.offset-xl-4
+        .clearfix
+            .float-right
+                = link_to edit_representative_path(@representative),
+                 class: 'mx-1 btn btn-primary' do
+                    %i.fas.fa-pencil
+                    Edit
+
+                = link_to representatives_path,
+                 class: 'mx-1 btn btn-info' do
+                    %i.fas.fa-list
+                    View all representatives
