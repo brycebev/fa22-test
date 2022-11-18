@@ -1,0 +1,17 @@
+Feature: avoid duplicate representative
+
+  As an interested voter
+  So that I can see information about representatives
+  I want to avoid creating duplicate (redundant) representative
+
+Background: representatives in database
+
+  Given the following representatives exist:
+  | OCD ID | Representative Name | Representative Title |
+  | 1      | Biden               | President            |
+
+Scenario: add a new representative
+  # TODO: check it is added to database
+
+Scenario: add an existing representative
+  # TODO: check that it is not saved in database
