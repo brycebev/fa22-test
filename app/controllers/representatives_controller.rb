@@ -7,11 +7,10 @@ class RepresentativesController < ApplicationController
     @representatives = Representative.all
   end
 
+  def show; end
+
   # helper
   def set_representative
-    @representative = Representative.find(
-      params[:id]
-    )
+    @representative = Representative.find(params[:id])
   end
-
 end
