@@ -10,9 +10,6 @@ political events in their area as well as aggregate, share and view news items i
 
 [![workflow passing](https://github.com/cs169/fa22-actionmap-fa22-28/actions/workflows/specs.yml/badge.svg)](https://github.com/cs169/fa22-actionmap-fa22-28/actions/workflows/specs.yml)
 
-<!-- TODO: Update codecov badge url! -->
-[![codecov](https://codecov.io/gh/saasbook/hw-agile-iterations/branch/master/graph/badge.svg?token=SGYCvQX4Us)](https://codecov.io/gh/saasbook/hw-agile-iterations)
-
 ### Getting Setup Locally
 
 Follow the [Getting Started Guide](./docs/01-getting-started.md) to get your localhost environment setup.
