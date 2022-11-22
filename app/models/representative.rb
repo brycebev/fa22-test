@@ -34,9 +34,9 @@ class Representative < ApplicationRecord
   def self.get_address(official_info)
     if official_info.address.present?
       address = official_info.address[0]
-      return [address.line1, address.city, address.state, address.zip]
+      [address.line1, address.city, address.state, address.zip]
     else
-      return ['', '', '', '']
+      ['', '', '', '']
     end
   end
 end
