@@ -19,21 +19,24 @@ class Representative < ApplicationRecord
 
       photo_temp = official.photo_url || ''
 
-      if official.address.present?
-        address = official.address[0]
-        rep = Representative.create!({ name: official.name, ocdid: ocdid_temp,
-            title: title_temp, street: address.line1, city: address.city,
-            state: address.state, zip: address.zip, political_party: official.party,
-            photo: photo_temp })
-      else
-        rep = Representative.create!({ name: official.name, ocdid: ocdid_temp,
-            title: title_temp, street: '', city: '', state: '', zip: '',
-            political_party: official.party, photo: photo_temp })
-      end
+      address = get_address(official)
 
+      rep = Representative.create!({ name: official.name, ocdid: ocdid_temp,
+            title: title_temp, street: address[0], city: address[1],
+            state: address[2], zip: address[3], political_party: official.party,
+            photo: photo_temp })
       reps.push(rep)
     end
 
     reps
+  end
+
+  def self.get_address(official_info)
+    if official_info.address.present?
+      address = official_info.address[0]
+      return [address.line1, address.city, address.state, address.zip]
+    else
+      return ['', '', '', '']
+    end
   end
 end
