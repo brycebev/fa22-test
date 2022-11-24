@@ -17,7 +17,7 @@ module NavigationHelpers
       '/'
     when /^the info(rmation)? page for "(.*)"$/ then representative_path(Representative.find_by(name: $2).id)
     when /^the news page for "([^"]*)"$/ then representative_path(Representative.find_by(name: $1).id)+"/news_items"
-    when /^the news page for "([^"]*)" article "(.*)"$/ then representative_path(Representative.find_by(name: $1).id)+"/news_items/24"
+    when /^the news page for "([^"]*)" article "(.*)"$/ then representative_path(Representative.find_by(name: $1).id)+"/news_items/"+NewsItem.find_by(title: $2).id.to_s
     when /^the add news page for "(.*)"$/ then representative_path(Representative.find_by(name: $1).id)+"/representatives/"+Representative.find_by(name: $1).id.to_s+"/my_news_item/new"
     when /the search page/ then '/representatives'
     # Add more mappings here.
