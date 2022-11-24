@@ -15,7 +15,10 @@ module NavigationHelpers
 
     when /^the home\s?page$/
       '/'
-
+    when /^the representative search page$/ then '/representatives'
+    when /^the info(rmation)? page for "(.*)"$/ then representative_path(Representative.find_by(name: $2).id)
+    when /^the news page for "(.*)"$/ then representative_path(Representative.find_by(name: $1).id)+"/news_items"
+    when /^the add news page for "(.*)"$/ then representative_path(Representative.find_by(name: $1).id)+"/representatives/"+Representative.find_by(name: $1).id.to_s+"/my_news_item/new"
     # Add more mappings here.
     # Here is an example that pulls values out of the Regexp:
     #

@@ -51,6 +51,8 @@ group :development, :test do
   gem 'rspec-rails'
   gem 'sqlite3'
 
+  gem 'webmock'
+
   # Guard Plugins
   gem 'guard'
   gem 'guard-cucumber', require: false

@@ -18,7 +18,7 @@ class Representative < ApplicationRecord
       end
 
       photo_temp = official.photo_url || ''
-
+      
       address = get_address(official)
 
       rep = Representative.create!({ name: official.name, ocdid: ocdid_temp,
