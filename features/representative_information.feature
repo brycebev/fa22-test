@@ -6,7 +6,7 @@ Feature: display information for representatives on their home pages
 photo.
 
 Background: Representative information has been accessed from the external API
-  Given I am on the representative search page
+  Given I am on the search page
   And I fill in "address" with "berkeley"
   And I press "commit"
  

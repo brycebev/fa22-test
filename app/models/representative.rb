@@ -16,11 +16,15 @@ class Representative < ApplicationRecord
           ocdid_temp = office.division_id
         end
       end
-
+      #ADDED IN for Part 1
+      if Representative.where(name: official.name).exists?
+        rep = Representative.where(name: official.name)[0]
+        reps.push(rep)
+        next
+      end
       photo_temp = official.photo_url || ''
       
       address = get_address(official)
-
       rep = Representative.create!({ name: official.name, ocdid: ocdid_temp,
             title: title_temp, street: address[0], city: address[1],
             state: address[2], zip: address[3], political_party: official.party,
